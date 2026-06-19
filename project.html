@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon Clone</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f3f3f3;
+}
+
+header{
+    background:#131921;
+    color:white;
+    padding:15px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+    color:#ff9900;
+}
+
+.search-box{
+    width:50%;
+}
+
+.search-box input{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+}
+
+.cart{
+    font-size:20px;
+    font-weight:bold;
+}
+
+.products{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:25px;
+}
+
+.product{
+    width:250px;
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0px 2px 8px rgba(0,0,0,0.2);
+    text-align:center;
+    transition:0.3s;
+}
+
+.product:hover{
+    transform:translateY(-5px);
+}
+
+.product img{
+    width:200px;
+    height:200px;
+    object-fit:cover;
+    border-radius:5px;
+}
+
+.product h3{
+    margin-top:10px;
+}
+
+.price{
+    color:green;
+    font-size:18px;
+    margin:10px 0;
+}
+
+button{
+    background:#ff9900;
+    border:none;
+    padding:10px 15px;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+    color:black;
+}
+
+button:hover{
+    background:#e68a00;
+}
+
+a{
+    text-decoration:none;
+}
+
+footer{
+    background:#131921;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">amazon</div>
+
+    <div class="search-box">
+        <input type="text"
+               id="search"
+               placeholder="Search Amazon"
+               onkeyup="searchProducts()">
+    </div>
+
+    <div class="cart">
+        🛒 Cart: <span id="cartCount">0</span>
+    </div>
+</header>
+
+<div class="products">
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500" alt="Laptop">
+        <h3>Laptop</h3>
+        <p class="price">₹50,000</p>
+        <a href="https://www.amazon.in/s?k=laptop" target="_blank">
+            <button onclick="addToCart()">Add to Cart</button>
+        </a>
+    </div>
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500" alt="Smartphone">
+        <h3>Smartphone</h3>
+        <p class="price">₹20,000</p>
+        <a href="https://www.amazon.in/s?k=smartphone" target="_blank">
+            <button onclick="addToCart()">Add to Cart</button>
+        </a>
+    </div>
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" alt="Headphones">
+        <h3>Headphones</h3>
+        <p class="price">₹2,000</p>
+        <a href="https://www.amazon.in/s?k=headphones" target="_blank">
+            <button onclick="addToCart()">Add to Cart</button>
+        </a>
+    </div>
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500" alt="Smart Watch">
+        <h3>Smart Watch</h3>
+        <p class="price">₹5,000</p>
+        <a href="https://www.amazon.in/s?k=smart+watch" target="_blank">
+            <button onclick="addToCart()">Add to Cart</button>
+        </a>
+    </div>
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500" alt="Sports Shoes">
+        <h3>Sports Shoes</h3>
+        <p class="price">₹3,500</p>
+        <a href="https://www.amazon.in/s?k=sports+shoes" target="_blank">
+            <button onclick="addToCart()">Add to Cart</button>
+        </a>
+    </div>
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="Bluetooth Speaker">
+        <h3>Bluetooth Speaker</h3>
+        <p class="price">₹1,500</p>
+        <a href="https://www.amazon.in/s?k=bluetooth+speaker" target="_blank">
+            <button onclick="addToCart()">Add to Cart</button>
+        </a>
+    </div>
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="Nike Shoes">
+        <h3>Nike Shoes</h3>
+        <p class="price">₹4,500</p>
+        <a href="https://www.amazon.in/s?k=nike+shoes" target="_blank">
+            <button onclick="addToCart()">Add to Cart</button>
+        </a>
+    </div>
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=500" alt="Backpack">
+        <h3>Backpack</h3>
+        <p class="price">₹1,200</p>
+        <a href="https://www.amazon.in/s?k=backpack" target="_blank">
+            <button onclick="addToCart()">Add to Cart</button>
+        </a>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Amazon Clone | Created using HTML, CSS & JavaScript</p>
+</footer>
+
+<script>
+let cartCount = 0;
+
+function addToCart() {
+    cartCount++;
+    document.getElementById("cartCount").innerText = cartCount;
+}
+
+function searchProducts() {
+    let input = document.getElementById("search").value.toLowerCase();
+    let products = document.querySelectorAll(".product");
+
+    products.forEach(product => {
+        let productName = product.querySelector("h3").innerText.toLowerCase();
+
+        if(productName.includes(input)){
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
+    });
+}
+</script>
+
+</body>
+</html>
